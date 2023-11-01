@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap");
+
+// Variables
+$palse-blue: hsl(225, 100%, 94%);
+$bright-blue: hsl(245, 75%, 52%);
+$very-pale-blue: hsl(225, 100%, 98%);
+$desaturated-blue: hsl(224, 23%, 55%);
+$dark-blue: hsl(223, 47%, 23%);
+
+$font-size: 16px;
+$font-family: "Red Hat Display", sans-serif;
+
+// Reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("./assets/pattern-background-desktop.svg");
+  background-repeat: no-repeat;
+}
+
+.app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: $font-family;
+  color: $dark-blue;
+  margin: 20px;
+}
+
+.summary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 450px;
+  padding: 0 50px 50px 50px;
+  row-gap: 30px;
+  background-color: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 10px 20px 50px rgba($bright-blue, 0.1);
+  &__heading {
+    font-size: 1.6rem;
+    font-weight: 900;
+  }
+
+  &__desc {
+    text-align: center;
+    color: $desaturated-blue;
+    font-size: 1rem;
+  }
+
+  &__proceed {
+    padding: 20px 0;
+    width: 100%;
+    background-color: $bright-blue;
+    color: $palse-blue;
+    border-radius: 10px;
+    border: none;
+    font-size: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 15px 20px 20px rgba($bright-blue, 0.3);
+    &:hover {
+      background-color: rgba($bright-blue, 0.7);
+    }
+  }
+
+  &__cancel {
+    border: none;
+    background-color: white;
+    color: $desaturated-blue;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+    &:hover,
+    &:focus {
+      color: $dark-blue;
+    }
+  }
+}
+
+.payment {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: $very-pale-blue;
+  gap: 20px;
+  padding: 25px;
+  border-radius: 10px;
+  &__icon {
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+  }
+
+  &__heading {
+    font-size: 1.1rem;
+    font-weight: 900;
+  }
+  &__amount {
+    color: $desaturated-blue;
+  }
+
+  &__changebtn {
+    margin-left: auto;
+    background-color: transparent;
+    border: none;
+    color: $bright-blue;
+    text-decoration: underline;
+    font: inherit;
+    font-weight: 700;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    background-image: url("./assets/pattern-background-mobile.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .summary {
+    padding: 0 20px 20px 20px;
+  }
+}
