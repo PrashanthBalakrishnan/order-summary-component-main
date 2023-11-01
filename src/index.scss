@@ -116,6 +116,11 @@ body {
     text-decoration: underline;
     font: inherit;
     font-weight: 700;
+    cursor: pointer;
+    &:hover {
+      color: rgba($bright-blue, 0.7);
+      text-decoration: none;
+    }
   }
 }
 
